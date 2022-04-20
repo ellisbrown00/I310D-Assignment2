@@ -10,9 +10,13 @@ My hypothesis is that the higher the score of a comment_text, the more labels it
 
 In order to analyze the data I decided to being by identifying all the comment_text’s that have a score of 0 in each label, then compare them to their score to see if there’s some sort of correlation between the 0-labeled comments and the at-least-1-labeled comments. I used the following line of codes and here are their respective results: 
 
+##All Labels = 0
+
 df[(df['toxic']==0) & (df['severe_toxic']==0) & (df['obscene']==0) & (df['threat']==0) & (df['insult']==0) & (df['identity_hate']==0)].sort_values(['score'])
 
 <img width="1117" alt="Screen Shot 2022-04-20 at 12 35 52 AM" src="https://user-images.githubusercontent.com/56270858/164157717-d7e44946-167a-4b1a-afcc-f7acc0a13420.png">
+
+#At Least One Label = 1
 
 df[(df['toxic']==1) | (df['severe_toxic']==1) | (df['obscene']==1) | (df['threat']==1) | (df['insult']==1) | (df['identity_hate']==1)].sort_values(['score'])
 
